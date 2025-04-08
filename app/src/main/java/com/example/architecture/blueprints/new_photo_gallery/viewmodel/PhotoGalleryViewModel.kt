@@ -169,9 +169,6 @@ class PhotoGalleryViewModel : ViewModel() {
         val scale = size.toFloat() / maxOf(width, height)
         return Bitmap.createScaledBitmap(bitmap, (width * scale).toInt(), (height * scale).toInt(), true)
     }
-    fun toggleTheme() {
-        isDarkTheme = !isDarkTheme
-    }
 
     fun clearAllFavorites() {
         photos = photos.map { it.copy(isFavorite = false) }

@@ -362,11 +362,7 @@ fun SettingsSection(
                 .animateContentSize(),
             shape = RoundedCornerShape(24.dp),
             colors = CardDefaults.cardColors(
-                containerColor = if (MaterialTheme.colorScheme.isLight()) {
-                    MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.7f)
-                } else {
-                    MaterialTheme.colorScheme.surfaceVariant
-                }
+                MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.7f)
             ),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 2.dp,
@@ -378,8 +374,3 @@ fun SettingsSection(
     }
 }
 
-// Helper function to determine if current theme is light
-@Composable
-fun ColorScheme.isLight(): Boolean {
-    return this.primary.luminance() > 0.5f
-}
